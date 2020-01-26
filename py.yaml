@@ -1,0 +1,16 @@
+---
+- hosts: webserver
+  become: true
+  gather_facts: True
+  tasks:
+   - name: Copy file
+     copy:
+       src: /root/permission/permission.py
+       dest: /root/test.py
+       mode: 0770 
+   - name: Executing the PYTHON SCRIPT
+     command: /root/test.py
+     register: ServerCheck
+   - debug: var={{ item }}
+     with_items:
+       - ServerCheck.stdout
