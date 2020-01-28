@@ -1,4 +1,4 @@
-#!/usr/bin/python3
+#!/usr/bin/python
 import os 
 filename = "/etc/passwd"
 filename1 = "/etc/shadow"

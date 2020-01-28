@@ -6,10 +6,10 @@
    - name: Copy file
      copy:
        src: /root/permission/permission.py
-       dest: /root/test.py
-       mode: 0770 
+       dest: /root/permission.py
+       mode: 0777 
    - name: Executing the PYTHON SCRIPT
-     command: /root/test.py
+     command: /root/permission.py
      register: ServerCheck
    - debug: var={{ item }}
      with_items:
